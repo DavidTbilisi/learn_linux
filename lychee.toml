@@ -1,0 +1,10 @@
+exclude = [
+  "^http://localhost",
+  "^https://localhost",
+  "^https://api.example.com",
+  "^https://example.com",
+  "^https://short.url",
+]
+accept = [200, 203, 206, 429]
+timeout = 20
+max_redirects = 5
