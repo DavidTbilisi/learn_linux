@@ -4,7 +4,11 @@ exclude = [
   "^https://api.example.com",
   "^https://example.com",
   "^https://short.url",
+  # linuxjourney.com blocks bots with 403 — verify manually if it changes.
+  "^https://linuxjourney\\.com",
 ]
-accept = [200, 203, 206, 429]
+# 403 added: many sites (Cloudflare, Linkedin Learning, etc.) refuse
+# CI agents. We tolerate them rather than block content updates.
+accept = [200, 203, 206, 403, 429]
 timeout = 20
 max_redirects = 5
